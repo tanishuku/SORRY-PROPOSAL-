@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#cbb6f1">
+<title>I'm Sorry, From My Heart 💜</title>
+<style>
+:root{--ink:#382747;--purple:#79539b;--lav:#dfd0fb;--white:rgba(255,255,255,.64);--edge:rgba(255,255,255,.88)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:ui-rounded,"Segoe UI",system-ui,sans-serif;background:radial-gradient(ellipse at 12% 8%,#fff 0,transparent 27%),radial-gradient(ellipse at 90% 28%,#f8d9ec 0,transparent 28%),linear-gradient(135deg,#f1eaff,#c7b0ee 52%,#f7dfef);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;background-image:radial-gradient(#fff 1px,transparent 1.5px);background-size:25px 25px;z-index:-2}
+.tulip{position:fixed;z-index:-1;opacity:.32;font-size:clamp(2rem,5vw,4.5rem);filter:drop-shadow(0 10px 14px #7d5a9a55);animation:drift 8s ease-in-out infinite;pointer-events:none}
+.t1{left:2%;bottom:7%}.t2{right:3%;top:8%;animation-delay:-3s}.t3{right:6%;bottom:12%;animation-delay:-5s}.t4{left:6%;top:25%;animation-delay:-1s}
+@keyframes drift{50%{transform:translateY(-16px) rotate(5deg)}}
+.wrap{width:min(930px,92%);margin:auto;padding:22px 0 55px}
+nav{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:20px;color:#704d8b;font-size:.88rem;font-weight:750}
+.pill{padding:8px 12px;border:1px solid var(--edge);border-radius:99px;background:#ffffff6b}
+.hero{text-align:center;padding:clamp(35px,8vw,78px) 12px 48px}
+.kicker{text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;font-weight:850;color:#805ba1}
+h1{font-size:clamp(2.7rem,8vw,5.9rem);line-height:.99;letter-spacing:-.065em;margin:18px 0}
+h1 span{color:#895fa9}
+.lead{max-width:680px;margin:0 auto;color:#665174;line-height:1.85;font-size:clamp(1rem,2.5vw,1.2rem)}
+.glass{background:var(--white);border:1px solid var(--edge);box-shadow:0 22px 65px #60437a1e,inset 0 1px 0 #ffffffcc;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-radius:28px;padding:clamp(22px,5vw,42px);margin:22px 0;position:relative;overflow:hidden}
+.glass:after{content:"";position:absolute;top:-70%;left:-35%;width:32%;height:240%;transform:rotate(25deg);background:linear-gradient(90deg,transparent,#ffffff36,transparent);pointer-events:none;transition:left .8s}
+.glass:hover:after{left:120%}
+h2{font-size:clamp(1.55rem,4.5vw,2.35rem);letter-spacing:-.04em;line-height:1.12;margin:0 0 12px}
+.sub{line-height:1.8;color:#6c587a;margin:0}
+.heart{font-size:2.8rem;display:inline-block;animation:beat 1.8s infinite;filter:drop-shadow(0 7px 12px #8a58b544)}
+@keyframes beat{15%{transform:scale(1.13)}30%,100%{transform:scale(1)}}
+.letter{margin-top:20px;background:#fffaff9c;border:1px solid #fff;border-radius:20px;padding:clamp(18px,4vw,28px);line-height:1.95}
+.letter p{margin:0 0 16px}.letter p:last-child{margin-bottom:0}
+.callout{margin-top:18px;border-left:4px solid #a98bcf;padding:14px 16px;border-radius:0 14px 14px 0;background:#eee4ff9c;line-height:1.8}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:22px}
+button{font:inherit;color:#53396b;border:1px solid #ffffffed;border-radius:17px;padding:15px 16px;background:linear-gradient(135deg,#ffffffd9,#eadfffba);box-shadow:0 8px 20px #674a8017;cursor:pointer;transition:transform .22s,box-shadow .22s,background .22s;touch-action:manipulation}
+button:hover{transform:translateY(-3px);box-shadow:0 13px 28px #674a8027}
+button:active{transform:scale(.97)}
+button:focus-visible{outline:3px solid #8a5ca7;outline-offset:3px}
+.choice[aria-pressed=true]{background:linear-gradient(135deg,#b79add,#eadfff);border-color:#fff}
+.reply{margin-top:16px;padding:17px;border-radius:17px;background:#fffaff9c;line-height:1.8;min-height:56px}
+.promise-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}
+.promise{border:1px solid #fff;background:#ffffff75;border-radius:19px;padding:18px 16px;transition:transform .25s}
+.promise:hover{transform:translateY(-4px) rotate(-.4deg)}
+.promise .emoji{font-size:1.6rem}.promise b{display:block;color:#704c91;margin:9px 0}.promise p{font-size:.92rem;line-height:1.7;color:#6b5877;margin:0}
+.surprise{text-align:center;background:linear-gradient(135deg,#ffffff99,#d6c0f5bb)}
+.big{background:linear-gradient(135deg,#78509b,#ad83d8);color:white;font-weight:800;padding:15px 24px;border:1px solid #ffffffa8}
+.surprise-list{display:grid;gap:12px;margin-top:22px;text-align:left}
+.reveal-card{display:none;padding:20px;border:1px solid white;border-radius:19px;background:#fffaffdb;line-height:1.85;animation:rise .5s ease both}
+.reveal-card.show{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+footer{text-align:center;color:#725d80;line-height:1.8;padding:25px 8px;font-size:.9rem}
+.tiny{font-size:.84rem}
+.sparkle{position:fixed;pointer-events:none;z-index:10;animation:spark .8s ease-out forwards;font-size:20px}
+@keyframes spark{to{transform:translate(var(--dx),-55px) rotate(35deg) scale(.2);opacity:0}}
+@media(max-width:650px){.promise-grid{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.hero{padding-top:38px}.glass{border-radius:23px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="tulip t1" aria-hidden="true">🌷</div><div class="tulip t2" aria-hidden="true">🌷</div><div class="tulip t3" aria-hidden="true">🌷</div><div class="tulip t4" aria-hidden="true">🌷</div>
+<div class="wrap">
+<nav><span>♡ A LETTER FROM MY HEART</span><span class="pill">for you, with sincerity 💜</span></nav>
+<header class="hero">
+<div class="kicker">please read only if you feel comfortable</div>
+<h1>I'm so, so sorry.<br><span>Bhot zyada sorry. 💜</span></h1>
+<p class="lead">I hate that we reached this point. I feel deeply sorry for the hurt I caused, and I wish I had handled things with more care. I can't undo what happened—but I can take responsibility for what happens next.</p>
+<div class="heart" aria-hidden="true">💜</div>
+</header>
+
+<section class="glass">
+<h2>I'm sorry, from the bottom of my heart. 🥺</h2>
+<p class="sub">Not one quick “sorry” to end a fight. A real apology that acknowledges the hurt.</p>
+<div class="letter">
+<p>I'm sorry. I'm genuinely, deeply, endlessly sorry for hurting you. I'm sorry for the times I made you feel alone when you needed care, for ignoring you, and for not treating your feelings with the attention and tenderness they deserved.</p>
+<p>I'm sorry for the physical hurt and the mental pain I caused you. There is no excuse for that. You didn't deserve to be hurt, frightened, disrespected, or made to feel small. I take responsibility for my actions, without blaming the fight, my emotions, or anything you said.</p>
+<p>I'm sorry for the tears, the stress, the overthinking, and the heaviness you may have carried because of me. I'm sorry that someone who should have treated you with care became a source of pain. I wish I could take that hurt away, but I know that wishing isn't enough.</p>
+<p>Bhot sorry, yaar. I'm sorry for every moment I made things worse instead of listening. I'm sorry for the words, the silence, the ignoring, and the times I failed to understand how deeply my behaviour affected you. I'm sorry for the trust I damaged and for making you question whether you were valued.</p>
+<p>I feel very, very bad about how things turned out. I keep wishing I had paused, listened, and acted differently. But I know this isn't about making you comfort me because I feel guilty. Your hurt matters, and my responsibility is to face what I did and work to make sure it doesn't happen again.</p>
+<p>I'm sorry again. And again. And again. I know a thousand “sorrys” cannot erase one painful moment. I don't expect these words to fix everything. I want my actions, consistency, and willingness to change to mean more than this page ever could.</p>
+<p>I'm not asking you to pretend the past never happened. If we ever build a new chapter, I want it to be honest about what happened, safer than before, and based on respect—not on forgetting, fear, guilt, or pressure.</p>
+</div>
+<div class="callout"><b>One thing I want you to know:</b> I would like us to find closure and, if you want it too, have a calm conversation. I won't force a conversation, keep calling, or demand an immediate answer. Your choice and safety matter.</div>
+</section>
+
+<section class="glass">
+<h2>What do you need from me right now? 🤍</h2>
+<p class="sub">I hope we can talk, but I want that to be a choice you feel safe making—not something you do because I keep asking.</p>
+<div class="grid" role="group" aria-label="Choose how you would like to respond">
+<button class="choice" aria-pressed="false" data-answer="talk">💬 I'm willing to talk calmly</button>
+<button class="choice" aria-pressed="false" data-answer="listen">👂 I need you to listen first</button>
+<button class="choice" aria-pressed="false" data-answer="time">⏳ I need time to think</button>
+<button class="choice" aria-pressed="false" data-answer="boundary">🧭 I need a clear boundary</button>
+</div>
+<div class="reply" id="reply" aria-live="polite">Whatever you choose, I will respect it. You don't need to choose an answer just to make me feel better.</div>
+</section>
+
+<section class="glass">
+<h2>Sorry is the start. Change is the promise. 🌱</h2>
+<p class="sub">These aren't promises to win you back. They're responsibilities I need to take seriously, whatever happens between us.</p>
+<div class="promise-grid">
+<div class="promise"><div class="emoji">🛑</div><b>No more physical harm</b><p>I will not use physical force, threats, intimidation, or aggression. I will seek appropriate help to address harmful behaviour and keep you safe.</p></div>
+<div class="promise"><div class="emoji">🫶</div><b>Respect your feelings</b><p>I will listen without interrupting, mocking, blaming, or making you responsible for my reactions.</p></div>
+<div class="promise"><div class="emoji">🌿</div><b>Prove it over time</b><p>I understand trust is earned through consistent actions. You don't have to trust me simply because I say I am sorry.</p></div>
+</div>
+</section>
+
+<section class="glass">
+<h2>Three little notes, just for you 💌</h2>
+<p class="sub">Tap each envelope to reveal a note. No pressure, no hidden request—just words I wanted to say carefully.</p>
+<div class="grid">
+<button onclick="openNote(1)">💌 Note one</button><button onclick="openNote(2)">🌷 Note two</button><button onclick="openNote(3)">✨ Note three</button><button onclick="openNote(4)">🦋 One last note</button>
+</div>
+<div class="surprise-list">
+<div class="reveal-card" id="note1"><b>I'm sorry for the hurt.</b><br>I wish I had chosen patience and kindness in every moment. I'm sorry I didn't. I can't ask you to forget it; I can only own it and do the work to change.</div>
+<div class="reveal-card" id="note2"><b>Your feelings are not a problem to solve quickly.</b><br>You deserve to be heard fully. If you want to tell me how this affected you, I'll listen without turning it into an argument or trying to rush you past your feelings.</div>
+<div class="reveal-card" id="note3"><b>I miss the good parts, but I won't use them to pressure you.</b><br>Our happy memories matter to me. So does what happened. Both can be true, and any future we choose has to be built on safety and respect.</div>
+<div class="reveal-card" id="note4"><b>My final sorry—for now. 💜</b><br>I'm so sorry. Bhot, bhot sorry. I hope one day my actions can show that I understood the seriousness of the hurt I caused. You deserve peace, whether or not you choose to continue this relationship.</div>
+</div>
+</section>
+
+<section class="glass surprise">
+<div class="kicker">a soft little surprise</div>
+<h2>A wish for a gentler tomorrow 🌷</h2>
+<p class="sub">Press the button for a tiny burst of lavender sparkles and a final message.</p>
+<p style="font-size:2rem;margin:18px 0" aria-hidden="true">🌷 ✨ 💜 ✨ 🌷</p>
+<button class="big" id="finalBtn" onclick="finalReveal()">Open the last surprise ✨</button>
+<div class="reveal-card" id="finalNote" style="margin-top:18px;text-align:left">
+<h2>Dear you,</h2>
+<p>I am sorry for hurting you physically and mentally, for ignoring you, and for the ways I failed to care for your heart. I am sorry for the fight and for my part in bringing us here. I feel deeply regretful, but I know that regret matters only if I use it to change.</p>
+<p>I hope we can reach a place of understanding. If you also want to talk, I will show up ready to listen, take responsibility, and respect your boundaries. If you are not ready, I will not force it. I want any next chapter to be something we both freely choose.</p>
+<p><b>I'm sorry. I'm truly sorry. Bhot zyada sorry. 💜</b></p>
+<p style="text-align:center;font-size:1.6rem">🌷 🤍 🌷</p>
+</div>
+</section>
+<footer>Made with lavender, tulips, and a sincere apology.<br><b>The most meaningful surprise is real change, shown consistently.</b><br><span class="tiny">This page is a message—not a substitute for accountability, safety, or a conversation both people want.</span></footer>
+</div>
+<script>
+const answers={
+ talk:"Thank you for being open to it. I'll keep my voice calm, listen first, and accept that we may not agree on everything. We can stop whenever you want.",
+ listen:"I'll listen without interrupting, defending myself, or asking you to make my guilt feel better. Your experience deserves to be heard.",
+ time:"I understand. I'll give you the time you need and won't keep messaging or demand a decision. You can reach out if and when you want.",
+ boundary:"Tell me what boundary feels right for you if you choose to. I'll respect it, even if it's difficult for me."
+};
+document.querySelectorAll(".choice").forEach(b=>b.addEventListener("click",()=>{
+ document.querySelectorAll(".choice").forEach(x=>x.setAttribute("aria-pressed","false"));
+ b.setAttribute("aria-pressed","true");
+ document.getElementById("reply").textContent=answers[b.dataset.answer];
+ sparkle(event.clientX||innerWidth/2,event.clientY||innerHeight/2,5);
+}));
+function openNote(n){
+ const card=document.getElementById("note"+n);
+ card.classList.toggle("show");
+ if(card.classList.contains("show")) card.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"nearest"});
+ sparkle(innerWidth/2,innerHeight/2,6);
+}
+function finalReveal(){
+ const card=document.getElementById("finalNote");
+ card.classList.add("show");
+ document.getElementById("finalBtn").textContent="A little message, with care 💜";
+ sparkle(innerWidth/2,innerHeight/2,24);
+ card.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"center"});
+}
+function sparkle(x,y,count){
+ const icons=["✨","💜","🌷","🤍"];
+ for(let i=0;i<count;i++){
+  const s=document.createElement("span");s.className="sparkle";s.textContent=icons[Math.floor(Math.random()*icons.length)];
+  s.style.left=(x+(Math.random()*100-50))+"px";s.style.top=(y+(Math.random()*50-25))+"px";
+  s.style.setProperty("--dx",(Math.random()*130-65)+"px");document.body.appendChild(s);setTimeout(()=>s.remove(),850);
+ }
+}
+document.addEventListener("pointerdown",e=>{
+ if(e.target.closest("button") && !e.target.classList.contains("choice")) sparkle(e.clientX,e.clientY,3);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I'm Sorry, From My Heart 💜</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  color: #432d55;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, #fff, transparent 35%),
+    linear-gradient(135deg, #f0e5ff, #cbb5f1, #f9dff0);
+  overflow-x: hidden;
+}
+
+.tulip {
+  position: fixed;
+  font-size: 45px;
+  opacity: .35;
+  pointer-events: none;
+  animation: float 5s ease-in-out infinite;
+  z-index: 0;
+}
+
+.t1 { top: 12%; left: 3%; }
+.t2 { top: 35%; right: 4%; animation-delay: 1s; }
+.t3 { bottom: 8%; left: 7%; animation-delay: 2s; }
+.t4 { bottom: 20%; right: 8%; animation-delay: 3s; }
+
+@keyframes float {
+  50% { transform: translateY(-18px) rotate(8deg); }
+}
+
+.container {
+  width: min(850px, 92%);
+  margin: auto;
+  padding: 30px 0 50px;
+  position: relative;
+  z-index: 1;
+}
+
+header {
+  text-align: center;
+  padding: 65px 10px 35px;
+}
+
+h1 {
+  font-size: clamp(2.6rem, 8vw, 5rem);
+  letter-spacing: -2px;
+  line-height: 1.1;
+  margin: 20px 0;
+}
+
+h1 span { color: #8959ad; }
+
+header p {
+  line-height: 1.8;
+  max-width: 650px;
+  margin: auto;
+}
+
+.heart {
+  font-size: 48px;
+  margin-top: 20px;
+  animation: beat 1.5s infinite;
+}
+
+@keyframes beat {
+  50% { transform: scale(1.15); }
+}
+
+.card {
+  margin: 25px 0;
+  padding: clamp(22px, 5vw, 38px);
+  border-radius: 26px;
+  background: rgba(255,255,255,.48);
+  border: 1px solid rgba(255,255,255,.85);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 20px 55px #65447a20;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.card:hover {
+  box-shadow: 0 24px 60px #65447a30;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 5vw, 2.3rem);
+  margin-bottom: 15px;
+}
+
+p {
+  line-height: 1.9;
+  margin-bottom: 15px;
+}
+
+.letter {
+  background: #fffaffaa;
+  padding: 22px;
+  border-radius: 18px;
+  margin-top: 20px;
+}
+
+button {
+  border: 1px solid #ffffff;
+  border-radius: 15px;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, #fff, #e4d5fa);
+  color: #52376c;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+  box-shadow: 0 8px 20px #75558c20;
+  touch-action: manipulation;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px #75558c30;
+}
+
+button:active { transform: scale(.96); }
+
+button:focus-visible {
+  outline: 3px solid #8959ad;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.reply, .note {
+  display: none;
+  background: #fffaffcc;
+  padding: 20px;
+  margin-top: 18px;
+  border-radius: 17px;
+  line-height: 1.85;
+  animation: appear .4s ease;
+}
+
+.reply.show, .note.show { display: block; }
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.promise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.promise {
+  background: #ffffff80;
+  border: 1px solid white;
+  padding: 18px;
+  border-radius: 18px;
+}
+
+.promise h3 {
+  color: #8054a2;
+  margin: 10px 0;
+}
+
+.promise p { font-size: .92rem; }
+
+.surprise { text-align: center; }
+
+.big-button {
+  color: white;
+  background: linear-gradient(135deg, #79509e, #b28cda);
+  font-weight: bold;
+  padding: 16px 25px;
+  margin-top: 10px;
+}
+
+.sparkle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 10;
+  animation: sparkle .9s ease-out forwards;
+}
+
+@keyframes sparkle {
+  to {
+    transform: translateY(-70px) scale(.2) rotate(40deg);
+    opacity: 0;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 25px 10px;
+  line-height: 1.8;
+  font-size: .9rem;
+}
+
+@media(max-width:600px) {
+  .buttons, .promise-grid { grid-template-columns: 1fr; }
+  header { padding-top: 40px; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="tulip t1">🌷</div>
+<div class="tulip t2">🌷</div>
+<div class="tulip t3">🌷</div>
+<div class="tulip t4">🌷</div>
+
+<div class="container">
+
+<header>
+  <p>♡ A LETTER FROM MY HEART ♡</p>
+  <h1>I'm so, so sorry.<br>
+    <span>Bhot zyada sorry. 💜</span>
+  </h1>
+  <p>
+    I wish I could turn back time and handle everything
+    differently. I cannot undo what happened, but I can
+    acknowledge the hurt I caused and work to change.
+  </p>
+  <div class="heart">💜</div>
+</header>
+
+<section class="card">
+  <h2>I'm sorry, from my heart 🥺</h2>
+
+  <div class="letter">
+    <p>
+      I'm sorry. I'm genuinely, deeply sorry for hurting you.
+      I'm sorry for ignoring you when you needed care and for
+      not treating your feelings with the attention they deserved.
+    </p>
+
+    <p>
+      I'm sorry for hurting you physically and mentally.
+      There is no excuse for that. You did not deserve to be
+      hurt, frightened, disrespected, or made to feel alone.
+      I take responsibility for my actions.
+    </p>
+
+    <p>
+      I'm sorry for the tears, the stress, the overthinking,
+      and the pain my behaviour caused. I'm sorry for the
+      moments I should have listened but instead made things worse.
+    </p>
+
+    <p>
+      Bhot sorry, yaar. I'm so, so sorry. I'm sorry for the
+      words, the silence, the ignoring, and the trust I damaged.
+      I wish I had paused, listened, and treated you more gently.
+    </p>
+
+    <p>
+      I'm sorry again and again. I know a thousand apologies
+      cannot erase one painful moment. I don't want to use my
+      guilt to make you comfort me. Your feelings matter, too.
+    </p>
+
+    <p>
+      I feel very bad about how things turned out. I wish I
+      could undo the hurt, but I know I cannot. What I can do
+      is take this seriously, work on myself, and show through
+      consistent actions that I understand the harm I caused.
+    </p>
+
+    <p>
+      If we ever begin a new chapter, I want it to be built
+      on honesty, safety, kindness, and respect—not on
+      pretending the past never happened.
+    </p>
+
+    <p>
+      I'm truly sorry. Bhot bhot sorry. 💜
+    </p>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Can we talk? 🤍</h2>
+  <p>
+    I hope we can find closure and talk calmly, if you want
+    that too. I want to understand how you feel rather than
+    argue about who was right.
+  </p>
+
+  <div class="buttons">
+    <button onclick="choose('talk')">💬 Let's talk calmly</button>
+    <button onclick="choose('listen')">👂 Listen to me first</button>
+    <button onclick="choose('time')">⏳ I need time</button>
+    <button onclick="choose('boundary')">🧭 I need boundaries</button>
+  </div>
+
+  <div id="reply" class="reply" aria-live="polite"></div>
+</section>
+
+<section class="card">
+  <h2>Sorry is the beginning. Change is the promise. 🌱</h2>
+
+  <div class="promise-grid">
+    <div class="promise">
+      <div>🛑</div>
+      <h3>Safety first</h3>
+      <p>
+        I will not use physical force, threats, intimidation,
+        or aggression. I will seek appropriate help to change
+        harmful behaviour.
+      </p>
+    </div>
+
+    <div class="promise">
+      <div>🫶</div>
+      <h3>Listen properly</h3>
+      <p>
+        I will listen without interrupting, blaming, or
+        making excuses for the hurt I caused.
+      </p>
+    </div>
+
+    <div class="promise">
+      <div>🌿</div>
+      <h3>Earn trust</h3>
+      <p>
+        I understand that trust takes time and consistent
+        actions. You don't owe me instant forgiveness.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Four little notes for you 💌</h2>
+  <p>Tap each button to reveal a message.</p>
+
+  <div class="buttons">
+    <button onclick="openNote(1)">💌 Note one</button>
+    <button onclick="openNote(2)">🌷 Note two</button>
+    <button onclick="openNote(3)">✨ Note three</button>
+    <button onclick="openNote(4)">🦋 Last note</button>
+  </div>
+
+  <div class="note" id="note1">
+    <b>I'm sorry for the hurt.</b><br>
+    I wish I had chosen patience and kindness.
+    I can't erase what happened, but I can take
+    responsibility and work to change.
+  </div>
+
+  <div class="note" id="note2">
+    <b>Your feelings deserve to be heard.</b><br>
+    If you want to tell me how this affected you,
+    I will listen without turning it into another argument.
+  </div>
+
+  <div class="note" id="note3">
+    <b>Our memories matter to me.</b><br>
+    I value our happy moments, but I know that
+    good memories don't cancel out the hurt.
+    Any future must be healthier for both of us.
+  </div>
+
+  <div class="note" id="note4">
+    <b>My final sorry—for now. 💜</b><br>
+    I'm so sorry. Bhot bhot sorry.
+    I hope my actions can show that I truly
+    understood the seriousness of what happened.
+  </div>
+</section>
+
+<section class="card surprise">
+  <h2>A little surprise for you 🌷</h2>
+  <p>
+    One last message, with all the sincerity I can offer.
+  </p>
+
+  <div style="font-size:2rem;margin:20px">
+    🌷 ✨ 💜 ✨ 🌷
+  </div>
+
+  <button class="big-button" onclick="finalSurprise()">
+    Open the last surprise ✨
+  </button>
+
+  <div class="note" id="finalNote">
+    <h2>Dear you, 💌</h2>
+
+    <p>
+      I'm sorry for hurting you physically and mentally,
+      for ignoring you, and for failing to treat you with
+      the care you deserved.
+    </p>
+
+    <p>
+      I hope we can reach a place of understanding.
+      If you also want to talk, I will listen, take
+      responsibility, and respect your boundaries.
+    </p>
+
+    <p>
+      You don't have to decide anything today.
+      If we choose a new chapter, I want it to be
+      something we both freely choose, built on trust
+      and genuine change.
+    </p>
+
+    <p style="text-align:center">
+      I'm sorry. Truly sorry. Bhot zyada sorry. 💜
+      <br>🌷 🤍 🌷
+    </p>
+  </div>
+</section>
+
+<footer>
+  Made with lavender, tulips, and a sincere apology. 💜<br>
+  Real change matters more than beautiful words.
+</footer>
+
+</div>
+
+<script>
+function choose(answer) {
+  const messages = {
+    talk: "If you want to talk, I'll listen calmly and accept that we may need time to work through things.",
+    listen: "I'll listen without interrupting, blaming you, or asking you to make me feel better about my guilt.",
+    time: "Take the time you need. I won't demand an answer or keep messaging you for one.",
+    boundary: "Your boundaries matter. I'll respect the limits you set, even when that is difficult for me."
+  };
+
+  const reply = document.getElementById("reply");
+  reply.textContent = messages[answer];
+  reply.classList.add("show");
+  burst(6);
+}
+
+function openNote(number) {
+  const note = document.getElementById("note" + number);
+  note.classList.toggle("show");
+  if (note.classList.contains("show")) burst(5);
+}
+
+function finalSurprise() {
+  document.getElementById("finalNote").classList.add("show");
+  burst(25);
+}
+
+function burst(count) {
+  const symbols = ["✨", "💜", "🌷", "🤍"];
+
+  for (let i = 0; i < count; i++) {
+    const item = document.createElement("span");
+    item.className = "sparkle";
+    item.textContent =
+      symbols[Math.floor(Math.random() * symbols.length)];
+
+    item.style.left = Math.random() * 100 + "vw";
+    item.style.top = (30 + Math.random() * 60) + "vh";
+    item.style.fontSize = (16 + Math.random() * 16) + "px";
+
+    document.body.appendChild(item);
+    setTimeout(() => item.remove(), 950);
+  }
+}
+</script>
+
+</body>
+</html>
